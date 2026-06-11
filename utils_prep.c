@@ -6,7 +6,7 @@
 /*   By: maminet <maminet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:54:52 by maminet           #+#    #+#             */
-/*   Updated: 2026/06/10 16:55:41 by maminet          ###   ########.fr       */
+/*   Updated: 2026/06/11 18:07:02 by maminet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ float	calculate_disorder(int *stack_a, int size)
 }
 
 
-
-
 int	check_arg(int check_bench, char **argv)
 {
 	int	(i) = 1;
@@ -75,7 +73,7 @@ int	check_arg(int check_bench, char **argv)
 
 void	start_algo(int strategy, stack *stack_a, stack *stack_b, float disorder)
 {
-    PRINT(strategy);
+    //PRINT(strategy);
 	if (strategy == 1)
 		simple_algo(stack_a, stack_b);
 	if (strategy == 2)
@@ -113,18 +111,29 @@ void	generate_benchmark(int strategy, float disorder, stack *stack_a,
 	int	total_ops;
 
 	total_ops = 0;
-	printf("[bench temp] arr : ");
-	print_stack(stack_a);
-	printf("[bench] disorder: %.2f%%\n", disorder * 100);
-	printf("[bench] strategy: %s\n", get_strat_name(strategy, disorder));
+	//printf("[bench temp] arr : ");
+	//print_stack(stack_a);
+	//PRINT(disorder);
+	ft_printf("[bench] disorder: %f%%\n", disorder * 100);
+	ft_printf("[bench] strategy: %s\n", get_strat_name(strategy, disorder));
 	total_ops = stack_a->p + stack_a->r + stack_a->rr + stack_a->rrr
 		+ stack_a->rrrr + stack_a->s + stack_a->ss + stack_b->p + stack_b->r
 		+ stack_b->rr + stack_b->rrr + stack_b->rrrr + stack_b->s + stack_b->ss;
-	printf("[bench] total_ops: %d\n", total_ops);
-	printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", stack_a->s,
+	ft_printf("[bench] total_ops: %d\n", total_ops);
+	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", stack_a->s,
 		stack_b->s, (stack_a->ss + stack_b->ss), stack_a->p, stack_b->p);
-	printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", stack_a->r,
+	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", stack_a->r,
 		stack_b->r, (stack_a->rr + stack_b->rr), stack_a->rrr, stack_b->rrr,
 		(stack_a->rrrr + stack_b->rrrr));
-	printf(" is sort ? %d", is_sort(stack_a));
+	//printf(" is sort ? %d", is_sort(stack_a));
 }
+
+// void    print(char *str){
+//     int i;
+    
+//     i = 0;
+//     while(str[i]){
+//         write(2, &str[i], 1);
+//         i++
+//     }
+// }

@@ -6,7 +6,7 @@
 /*   By: maminet <maminet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:16:29 by maminet           #+#    #+#             */
-/*   Updated: 2026/06/10 15:21:18 by maminet          ###   ########.fr       */
+/*   Updated: 2026/06/11 17:51:33 by maminet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 void	swap(stack *staack)
 {
-	if (!staack->struc->benchie)
-	{
 		if (staack->is_a)
-			printf("sa\n");
+			write(1,"sa\n",3);
 		else
-			printf("sb\n");
-	}
+			write(1,"sb\n",3);
+	
 	action_swap(staack);
 }
 
@@ -35,7 +33,8 @@ void	action_swap(stack *staack)
 	staack->array[1] = temp;
 	staack->s++;
 }
-
+// 1
+// bench = 2
 void	swapswap(stack *stack_a, stack *stack_b)
 {
 	action_swap(stack_a);
@@ -43,6 +42,5 @@ void	swapswap(stack *stack_a, stack *stack_b)
 	stack_a->ss++;
 	stack_a->s--;
 	stack_b->s--;
-	if (!stack_a->struc->benchie)
-		printf("ss\n");
+		write(1,"ss\n",3);
 }

@@ -6,7 +6,7 @@
 /*   By: maminet <maminet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:16:29 by maminet           #+#    #+#             */
-/*   Updated: 2026/06/10 17:53:24 by maminet          ###   ########.fr       */
+/*   Updated: 2026/06/11 18:06:18 by maminet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	reverse_rotate(stack *staack)
 {
-	if (!staack->struc->benchie)
-	{
 		if (staack->is_a)
-			printf("rra\n");
+			write(1,"rra\n",4);
 		else
-			printf("rrb\n");
-	}
+			write(1,"rrb\n",4);
+	
 	action_reverse_rotate(staack);
+
 }
 
 void	action_reverse_rotate(stack *staack)
@@ -32,7 +31,7 @@ void	action_reverse_rotate(stack *staack)
 	if (staack->size < 1)
 		return ;
 	temp = staack->array[staack->size - 1];
-	i = staack->size;
+	i = staack->size-1;
 	while (i > 0)
 	{
 		staack->array[i] = staack->array[i - 1];
@@ -44,11 +43,14 @@ void	action_reverse_rotate(stack *staack)
 
 void	reverse_rotate_reverse_rotate(stack *stack_a, stack *stack_b)
 {
+
 	action_reverse_rotate(stack_a);
 	action_reverse_rotate(stack_b);
 	stack_a->rrrr++;
 	stack_a->rrr--;
 	stack_b->rrr--;
-	if (!stack_a->struc->benchie)
-		printf("rrr\n");
+		write(1,"rrr\n",4);
+
+
+
 }

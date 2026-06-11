@@ -6,7 +6,7 @@
 /*   By: maminet <maminet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:16:29 by maminet           #+#    #+#             */
-/*   Updated: 2026/06/10 17:53:15 by maminet          ###   ########.fr       */
+/*   Updated: 2026/06/11 22:23:49 by maminet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 void	rotate(stack *staack)
 {
-	if (!staack->struc->benchie)
-	{
 		if (staack->is_a)
-			printf("ra\n");
+			write(1, "ra\n", 3);
 		else
-			printf("rb\n");
-	}
+			write(1, "rb\n", 3);
+	
 	action_rotate(staack);
 }
 
@@ -33,7 +31,7 @@ void	action_rotate(stack *staack)
 		return ;
 	temp = staack->array[0];
 	i = 0;
-	while (i < staack->size)
+	while (i < staack->size-1)
 	{
 		staack->array[i] = staack->array[i + 1];
 		i++;
@@ -49,6 +47,5 @@ void	rotaterotate(stack *stack_a, stack *stack_b)
 	stack_a->rr++;
 	stack_a->r--;
 	stack_b->r--;
-	if (!stack_a->struc->benchie)
-		printf("rr\n");
+		write(1, "rr\n", 3);
 }

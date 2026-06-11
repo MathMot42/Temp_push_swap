@@ -6,7 +6,7 @@
 /*   By: maminet <maminet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:52:37 by maminet           #+#    #+#             */
-/*   Updated: 2026/06/10 15:53:27 by maminet          ###   ########.fr       */
+/*   Updated: 2026/06/11 22:22:52 by maminet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,13 @@ void	print_stack(stack *staack)
 	int	i;
 
 	i = 0;
+	PRINT(staack->size);
 	while (i < staack->size)
 	{
-		printf("%d ", staack->array[i]);
+		ft_printf("%d ", staack->array[i]);
 		i++;
 	}
-	printf("\n");
+	ft_printf("\n");
 }
 int	is_sort(stack *staack)
 {

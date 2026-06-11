@@ -6,7 +6,7 @@
 /*   By: maminet <maminet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:51:02 by maminet           #+#    #+#             */
-/*   Updated: 2026/06/10 17:52:29 by maminet          ###   ########.fr       */
+/*   Updated: 2026/06/11 16:13:20 by maminet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ au plus petit
 And finally, we spam push from B to A so that
 Stack A has an orderly list (rangé quoi dans l'ordre croissant)
 */
-
 char	*simple_algo(stack *a, stack *b)
 {
 	int	i;

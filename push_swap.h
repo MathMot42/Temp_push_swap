@@ -1,6 +1,10 @@
+
+#include <stdarg.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h>
+#include <math.h>
 typedef struct ps_struct ps_struct;
 typedef struct stack stack;
 
@@ -69,6 +73,9 @@ void	action_push(stack *staack_from, stack *staack_to);
 void	pushpush(stack *stack_a, stack *stack_b);
 void	reverse_rotate(stack *staack);
 
+void	ft_sort_int_tab(int *tab, int size);
+double	ft_sqrt(double n);
+
 void	action_reverse_rotate(stack *staack);
 void	reverse_rotate_reverse_rotate(stack *stack_a, stack *stack_b);
 void	rotate(stack *staack);
@@ -93,3 +100,15 @@ int	is_sort(stack *staack);
 int	string_equals(char *str1, char *str2);
 
 void	push_swap(int size_array, char **argv, int arg_index);
+
+static int	ft_kelforma(char forma, va_list ap, int *ct);
+int	ft_printf(const char *cible, ...);
+void	ft_printc(char ap, int *ct);
+void	ft_printp(void *ap, int *ct);
+void	ft_printdi(long nb, int *ct);
+void	ft_printu(unsigned int ap, int *ct);
+void	ft_printx(unsigned int nb, int *ct);
+void	ft_print_majx(unsigned int nb, int *ct);
+void	ft_printpc(int *ct);
+void	ft_prints(char *ap, int *ct);
+void ft_printfloat(float f, int *ct);

@@ -6,7 +6,7 @@
 /*   By: maminet <maminet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:16:29 by maminet           #+#    #+#             */
-/*   Updated: 2026/06/10 15:25:21 by maminet          ###   ########.fr       */
+/*   Updated: 2026/06/11 22:04:34 by maminet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	push(stack *staack_from, stack *staack_to)
 {
-	if (!staack_from->struc->benchie)
-	{
+
 		if (staack_from->is_a)
-			printf("pb\n");
+			write(1,"pb\n",3);
 		else
-			printf("pa\n");
-	}
+			write(1,"pa\n",3);
+	
 	action_push(staack_from, staack_to);
 }
 
@@ -41,7 +40,7 @@ void	action_push(stack *staack_from, stack *staack_to)
 	staack_to->size++;
 	staack_to->array[0] = staack_from->array[0];
 	i = 0;
-	while (i < staack_from->size)
+	while (i < staack_from->size-1)
 	{
 		staack_from->array[i] = staack_from->array[i + 1];
 		i++;
